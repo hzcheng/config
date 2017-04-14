@@ -117,10 +117,14 @@ if ! shopt -oq posix; then
 fi
 alias vi='vim -p'
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # added by Anaconda3 4.1.1 installer
 #export PATH="/home/hzcheng/anaconda3/bin:$PATH"
 export PATH="$PATH:/home/hzcheng/anaconda3/bin"
-export PS1="\u@\h \[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;208m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$ \[$(tput sgr0)\]"
+export PS1="\u@\h \[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[0;32m\]\$(parse_git_branch) \[$(tput sgr0)\]\[\033[38;5;208m\]\A\[$(tput sgr0)\]\[\033[38;5;15m\]\n\\$ \[$(tput sgr0)\]"
 export dir485='/home/hzcheng/Documents/EECS485/p5_bqsd79'
 export dir482="/home/hzcheng/Documents/EECS482/hzcheng.jinmoy.stfried.4"
 export server482='login.engin.umich.edu'
