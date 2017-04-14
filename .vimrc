@@ -36,6 +36,8 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'raimondi/delimitmate'
 " Add easy motion
 Plugin 'easymotion/vim-easymotion'
+" Add nerdtree-tab
+Bundle 'jistr/vim-nerdtree-tabs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -66,6 +68,7 @@ map <C-K> <C-Y>
 map <C-J> <C-E>
 " map <Tab> <C-W><C-W>
 map <Tab> <C-W>
+map <Tab><Tab> <C-W><C-W>
 inoremap <Tab> <C-P>
 map <F12> <C-^>
 vnoremap // y/<C-R>"<CR>
@@ -75,3 +78,7 @@ map qq :NERDTree<CR>
 nmap <F8> :TagbarToggle<CR>
 imap <c-s> <Esc>:w<CR>a
 nmap <c-s> :w<CR>
+
+" set nedtree width
+let g:NERDTreeWinSize=30
+let g:nerdtree_tabs_open_on_console_startup=1
