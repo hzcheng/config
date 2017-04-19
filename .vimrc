@@ -62,6 +62,7 @@ set number
 set laststatus=2
 set hlsearch
 set autoread
+set mouse=a
 nnoremap <C-L> gt
 nnoremap <C-H> gT
 map <C-K> <C-Y>
@@ -74,11 +75,10 @@ map <F12> <C-^>
 vnoremap // y/<C-R>"<CR>
 map gm :call cursor(0,virtcol('$')/2)<CR>
 set tabpagemax=50
-map qq :NERDTree<CR>
+map qq :NERDTreeTabsToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 imap <c-s> <Esc>:w<CR>a
 nmap <c-s> :w<CR>
 
-" set nedtree width
-let g:NERDTreeWinSize=30
-let g:nerdtree_tabs_open_on_console_startup=1
+
+let g:NERDTreeWinSize = 20
